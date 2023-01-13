@@ -1,3 +1,3 @@
 class TodoSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :description, :completed
 end
