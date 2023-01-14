@@ -29,7 +29,7 @@ function displayCreateForm() {
 
 // helper funcction to clear off page
 function clearForm() {
-    let formDiv = document.querySelector('new-todo-form') 
+    let formDiv = document.querySelector('#new-todo-form') 
     formDiv.innerHTML = ""
 }
 
@@ -39,8 +39,8 @@ function createTodo(e) {
     let main = document.getElementById('main')
     // console.log(e)
     let todo = {
-        description: e.target.querySelctor("#deescription").value,
-        completed: e.target.querySelctor("#completed").checked
+        description: e.target.querySelector("#description").value,
+        completed: e.target.querySelector("#completed").checked
     }
     // to send it to the backend to keep
     // what we are sending with the fetch
@@ -53,7 +53,7 @@ function createTodo(e) {
         }
     }
 
-    fetch(BASE_URL = '/todos', configObj)
+    fetch(BASE_URL + '/todos', configObj)
     .then (res => res.json())
     .then (todo => {
         // add the todo to the list
