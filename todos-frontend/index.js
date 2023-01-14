@@ -1,6 +1,9 @@
 const BASE_URL = 'http://localhost:3000'
 
+// Startup
 window.addEventListener('DOMContentLoaded', () => {
+
+    document.getElementById('todos').addEventListener('click', getTodos)
     getTodos()
 })
 
