@@ -125,6 +125,20 @@ function displayTodo(e) {
         <p>${todo.completed ? 'Completed' : 'Not Completed'}</p>
         <button id='delete-todo' data-id='${todo.id}'>Delete</button>
         `
+        document.getElementById('delete-todo').addEventListener('click', removeTodo)
+
     })
 }
 
+function removeTodo(event) {
+    let configObj = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }
+    fetch(BASE_URL + `/todos/${event.target.dataset.id}`, configObj)
+    .then(getTodos())
+    
+}

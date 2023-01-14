@@ -343,3 +343,96 @@ Processing by TodosController#show as */*
 Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1697)
 
 
+Started GET "/todos" for ::1 at 2023-01-14 11:28:57 -0500
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.37ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 1.1ms | Allocations: 3267)
+
+
+Started GET "/todos" for ::1 at 2023-01-14 11:31:20 -0500
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.26ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.4ms | Allocations: 3097)
+
+
+Started GET "/todos/1" for ::1 at 2023-01-14 11:31:21 -0500
+Processing by TodosController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:13:in `show'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (2.05ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1722)
+
+
+Started GET "/todos" for ::1 at 2023-01-14 11:32:08 -0500
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.96ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 3097)
+
+
+Started GET "/todos/1" for ::1 at 2023-01-14 11:32:09 -0500
+Processing by TodosController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:13:in `show'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (2.08ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1697)
+
+
+Started GET "/todos" for ::1 at 2023-01-14 11:32:41 -0500
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.2ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 3097)
+
+
+Started GET "/todos/1" for ::1 at 2023-01-14 11:32:42 -0500
+Processing by TodosController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:13:in `show'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (2.33ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1700)
+
+
+Started GET "/todos" for ::1 at 2023-01-14 11:32:43 -0500
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.6ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 3098)
+
+
