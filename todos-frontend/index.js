@@ -2,15 +2,14 @@ const BASE_URL = 'http://localhost:3000'
 
 // Startup
 window.addEventListener('DOMContentLoaded', () => {
-
-    document.getElementById('todos').addEventListener('click', getTodos)
     getTodos()
 })
 
+// Index View
 function getTodos() {
     let main = document.getElementById('main')
     main.innerHTML = ''
-    fetch(BASE_URL + '/todos')
+    fetch(BASE_URL + '/todos') 
     .then (res => res.json())
     .then(todos => {
         todos.map(todo => {
