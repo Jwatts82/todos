@@ -3,11 +3,42 @@ const BASE_URL = 'http://localhost:3000'
 // Startup
 window.addEventListener('DOMContentLoaded', () => {
     // show form 
-    document.getElementById('todo-form').addEventListener('click', dislayCreateForm)
+    document.getElementById('todo-form').addEventListener('click', displayCreateForm)
     // show index view button
     document.getElementById('todos').addEventListener('click', getTodos)
     getTodos()
 })
+
+// writing the callback function for the form
+function displayCreateForm() {
+    let formDiv = document.querySelector('#new-todo-form')
+    let html = `
+        <form>
+            <label>Description</label>
+            <input type='text' id='description'></input>
+            <label>Complete</label>
+            <input type='checkbox' id='completed'></input>
+            <input type='submit'></input>
+        </form>
+    `
+    // add to the document
+    formDiv.innerHTML = html
+    // best practice to add submit to the form and not the submit button
+    document.querySelector('form').addEventListener('submit', createTodo)
+}
+
+// helper funcction to clear off page
+function clearForm() {
+    let formDiv = document.querySelector('new-todo-form') 
+    formDiv.innerHTML = ""
+}
+
+function createTodo(e) {
+    // form submission prevent the send post (hijacking event)
+    e.preventDefault()
+    console.log(e)
+}
+
 
 // Index View
 function getTodos() {

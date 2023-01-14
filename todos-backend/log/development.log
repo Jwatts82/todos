@@ -189,3 +189,35 @@ Processing by TodosController#index as */*
 Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 794)
 
 
+Started GET "/" for ::1 at 2023-01-14 10:13:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jwattsterramar/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jwattsterramar/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 477)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3175)
+
+
+Started GET "/todos" for ::1 at 2023-01-14 10:20:04 -0500
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 13ms (Views: 6.3ms | ActiveRecord: 1.1ms | Allocations: 3984)
+
+
+Started GET "/todos" for ::1 at 2023-01-14 10:21:35 -0500
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 924)
+
+
+Started GET "/todos" for ::1 at 2023-01-14 10:22:28 -0500
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 807)
+
+
