@@ -2,6 +2,10 @@ const BASE_URL = 'http://localhost:3000'
 
 // Startup
 window.addEventListener('DOMContentLoaded', () => {
+    // show form 
+    document.getElementById('todo-form').addEventListener('click', dislayCreateForm)
+    // show index view button
+    document.getElementById('todos').addEventListener('click', getTodos)
     getTodos()
 })
 
@@ -9,8 +13,10 @@ window.addEventListener('DOMContentLoaded', () => {
 function getTodos() {
     let main = document.getElementById('main')
     main.innerHTML = ''
+    // comment out below 2 lines to show async example
     fetch(BASE_URL + '/todos') 
     .then (res => res.json())
+    // fetchTodos()
     .then(todos => {
         todos.map(todo => {
         // console.log(todos)
@@ -24,6 +30,13 @@ function getTodos() {
     attachClicksToLinks()
     })
 }
+
+// async replacing function cleaner example move into a service class
+// async function fetchTodos() {
+//     let res = await fetch(BASE_URL + '/todos')
+//     let data = await res.json()
+//     return data
+// }
 
 function attachClicksToLinks() {
     const todos = document.querySelectorAll('li a')
@@ -48,5 +61,3 @@ function displayTodo(e) {
         `
     })
 }
-
-
