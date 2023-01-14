@@ -123,6 +123,8 @@ function displayTodo(e) {
         <hr>
         <br>
         <p>${todo.completed ? 'Completed' : 'Not Completed'}</p>
+        <button id='delete-todo' data-id='${todo.id}'>Delete</button>
         `
     })
 }
+
