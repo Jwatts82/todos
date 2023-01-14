@@ -36,7 +36,38 @@ function clearForm() {
 function createTodo(e) {
     // form submission prevent the send post (hijacking event)
     e.preventDefault()
-    console.log(e)
+    let main = document.getElementById('main')
+    // console.log(e)
+    let todo = {
+        description: e.target.querySelctor("#deescription").value,
+        completed: e.target.querySelctor("#completed").checked
+    }
+    // to send it to the backend to keep
+    // what we are sending with the fetch
+    let configObj = {
+        method: 'POST',
+        body: JSON.stringify(todo),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }
+
+    fetch(BASE_URL = '/todos', configObj)
+    .then (res => res.json())
+    .then (todo => {
+        // add the todo to the list
+        main.innerHTML += `
+        <li>
+            <a href='#' data-id='${todo.id}'>${todo.description}</a>
+            - ${todo.completed ? 'Completed' : 'Not Completed'}
+        </li>
+        `
+        // besides adding to inner html
+        attachClicksToLinks()
+        clearForm()
+        }
+    ) 
 }
 
 
