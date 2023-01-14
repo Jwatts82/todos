@@ -111,7 +111,7 @@ function attachClicksToLinks() {
 
 // Show Route
 function displayTodo(e) {
-    console.log(e.target)
+    // console.log(e.target)
     let id = e.target.dataset.id
     let main = document.getElementById('main')
     main.innerHTML = ''
@@ -138,7 +138,10 @@ function removeTodo(event) {
             'Accept': 'application/json'
         }
     }
+    // wants an arrow function
     fetch(BASE_URL + `/todos/${event.target.dataset.id}`, configObj)
-    .then(getTodos())
-    
+    .then(() => {
+        console.log('deleting')
+        getTodos()}
+        )
 }
