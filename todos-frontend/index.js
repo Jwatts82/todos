@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 // writing the callback function for the form
+// New Route
 function displayCreateForm() {
     let formDiv = document.querySelector('#new-todo-form')
     let html = `
@@ -33,6 +34,7 @@ function clearForm() {
     formDiv.innerHTML = ""
 }
 
+// Create Route
 function createTodo(e) {
     // form submission prevent the send post (hijacking event)
     e.preventDefault()
@@ -107,14 +109,15 @@ function attachClicksToLinks() {
     }
 }
 
+// Show Route
 function displayTodo(e) {
     console.log(e.target)
     let id = e.target.dataset.id
     let main = document.getElementById('main')
     main.innerHTML = ''
-    fetch(BASE_URL + `/todo/${id}`)
+    fetch(BASE_URL + `/todos/${id}`)
     .then(res => res.json())
-    .then(data => {
+    .then(todo => {
         main.innerHTML = `
         <h3>${todo.description}</h3>
         <hr>

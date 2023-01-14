@@ -293,3 +293,30 @@ Processing by TodosController#create as JSON
 Completed 201 Created in 14ms (Views: 4.3ms | ActiveRecord: 3.4ms | Allocations: 3150)
 
 
+Started GET "/todo/1" for ::1 at 2023-01-14 11:10:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/todo/1"):
+  
+Started GET "/todos" for ::1 at 2023-01-14 11:11:48 -0500
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.7ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 1.4ms | Allocations: 3297)
+
+
+Started GET "/todos/1" for ::1 at 2023-01-14 11:11:49 -0500
+Processing by TodosController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todos_controller.rb:13:in `show'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (2.26ms)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1947)
+
+
